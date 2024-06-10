@@ -1,5 +1,7 @@
 # Nash Chain-of-Thought (CoT)
+
 Here, we provide single case for CoT:
+
 '''
---dataset $1 --random_seed $2 --tokenizer_path $3 --model_tag $4
+sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
 '''
