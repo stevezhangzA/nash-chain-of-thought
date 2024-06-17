@@ -6,7 +6,12 @@
 
 CoT is a *step-by-step* manner inference approach. 
 
-Requirement (Here, we provide single template case for CoT): we have *question x*,  *prompt: 'Let's think step by step'*, *trigger: 'Therefore, the answer is:'* 
+Requirement (Here, we provide single template case for CoT): 
+*question: x*,  
+
+*prompt: 'Let's think step by step'*, 
+
+*trigger: 'Therefore, the answer is:'* 
 
 This approach is composed of two steps:
 
