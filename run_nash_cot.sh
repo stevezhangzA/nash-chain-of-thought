@@ -1,1 +1,1 @@
-python nash_cot2.py --method zero_shot_cot --dataset $1 --random_seed $2 --tokenizer_path $3 --model_tag $4
+python nash_cot.py --method zero_shot_cot --dataset $1 --random_seed $2 --sub_dir template_research --tokenizer_path ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 --model_tag ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 --inner_loop $3 --outer_loop $4
