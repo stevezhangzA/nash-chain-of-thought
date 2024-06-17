@@ -34,7 +34,7 @@ archivePrefix={arXiv},
 
 ### Thanks 
 
-We utilize these models: GLM, MIS-7B.
+We utilize these models: GLM4-chat (9B), Mistral-Instruct (7B).
 
 Our codebase is modified from the codebase of Automatic CoT
 
