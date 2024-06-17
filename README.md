@@ -13,8 +13,8 @@ Requirement (Here, we provide a case of CoT's template):
 
 This approach is composed of two steps:
 
-- Step1 (obtain rational): Generating rational: *z=LLM(\cdot|x, prompt)* 
-- Step2 (obtain answer)  : Obtain answer      : *a=LLM(\cdot|x, prompt, z, trigger)*
+- Step1 (obtain rational): *z=LLM(\cdot|x, prompt)* 
+- Step2 (obtain answer)  : *a=LLM(\cdot|x, prompt, z, trigger)*
 
 ### Multi-path inference with CoT
 
