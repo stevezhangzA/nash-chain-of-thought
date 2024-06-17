@@ -67,6 +67,6 @@ zero-shot/zero-shot-cot/self-consistency are implemented by ourself.
 
 # Collaberation 
 
-If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable inference 3) 
+If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable generation 3) 
 
 Both of my e-mile and adding new blog to this project is welcomed. 
