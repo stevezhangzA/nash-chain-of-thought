@@ -90,7 +90,7 @@ If you can find out any kinds of new usages of Nash CoT, we are welcomed to be c
 
 Both of my E-mail (stevezhangz98a@gmail.com) and adding new blog to this project are welcomed. 
 
-### *Reference*
+## *Reference*
 
 [1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. 2022. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. Preprint. arXiv: 2201.11903.
 
