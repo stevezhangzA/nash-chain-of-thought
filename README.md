@@ -68,7 +68,7 @@ It means that if you can attention these un-controllabel factors,  your performa
 
 ## Thanks 
 
-We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above. 
+We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above (*un-controllabel factors*). 
 
 Our codebase is modified from the codebase of Automatic CoT, and our local decoder is built based on Huggingface Transformer
 
