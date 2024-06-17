@@ -13,7 +13,7 @@ This approach is composed of two steps:
 - Step1 (obtain rational): Generating rational: z=LLM( |x, prompt)
 - Step2 (obtain answer)  : Obtain answer      : a=LLM( |x, prompt, z, trigger)
 
-## Multi path inference with CoT
+### Multi-path inference with CoT
 
 Previously, self-consistency[2] showcase that multi-path CoT inference with voting the highest frequency answer can improve the accuracy of prediction. However, it's computing in-sufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
 
