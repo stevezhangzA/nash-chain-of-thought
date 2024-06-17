@@ -15,11 +15,11 @@ This approach is composed of two steps:
 
 ## Multi path inference with CoT
 
-Previously, [2] showcase that multi-path CoT inference with voting the highest frequency answer can improve the accuracy of prediction. However, it's computing in-sufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
+Previously, self-consistency[2] showcase that multi-path CoT inference with voting the highest frequency answer can improve the accuracy of prediction. However, it's computing in-sufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
 
 ### The framework of Nash CoT:
 
-Nash CoT utilize template to guide LLM correctly answer the question and 
+Nash CoT utilize question related contextual information as the template to inference in each path, while utilizing Preference Equilibrium to allivate overconfident generation.
 
 ![image](demonstration.png)
 
