@@ -20,6 +20,11 @@ Here, we provide single case for CoT:
 sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
 ```
 
+### We list severl un-controllabel factors:
+
+- We find that any 
+
+
 ### If you utilize our codebase, please cite below:
 
 ```c
@@ -34,7 +39,7 @@ archivePrefix={arXiv},
 
 ### Thanks 
 
-We utilize these models: GLM4-chat (9B), Mistral-Instruct (7B).
+We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above. 
 
 Our codebase is modified from the codebase of Automatic CoT
 
