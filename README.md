@@ -26,7 +26,7 @@ sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
 
 ### We list severl un-controllabel factors:
 
-- We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger.
+- We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer.
 -  
 
 
