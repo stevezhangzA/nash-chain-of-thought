@@ -8,7 +8,6 @@
 
 Here, we provide single case for CoT:
 
-
 ### The framework of Nash CoT:
 
 ![image](demonstration.png)
