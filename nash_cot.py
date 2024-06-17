@@ -4,16 +4,13 @@ import torch
 import random
 import time
 import os
-from utils import *
-#from sentence_transformers import SentenceTransformer
-from local_decoder import custom_api
-
-from collections import Counter
-
 import pickle
-
 import pickle as pkl
 from pathlib import Path
+from collections import Counter
+
+from utils import *
+from local_decoder import custom_api，custom_api_others
 
 def file_to_string(filename):
     # this function is utilized to readout a file for the construction of template.
@@ -25,7 +22,6 @@ def file_to_string(filename):
         with open(os.path.join(os.getcwd(), filename), 'r') as file:
             return file.read()
     
-
 class Nash_decoder(object):
     def __init__(self, user_information
                      , game_goalandtips
@@ -130,7 +126,7 @@ class Nash_decoder(object):
         message=[{"role": "user",
                  "content": self.initial_system + '\n' + self.player_pool[self.all_player_list[self.optimal_player_id]].format(query=self.question_tag + query,
                                                                                                                                player_key=self.user_information[list(self.player_pool.keys())[self.optimal_player_id]],
-                                                                                                                            cot_prompt='A: ' + self.cot_prompt+ z + ' ' + self.direct_answer_trigger)}]
+                                                                                                                               cot_prompt='A: ' + self.cot_prompt+ z + ' ' + self.direct_answer_trigger)}]
         answer = self.LLM.inference(message)
         answer=answer_cleansing(args, answer)
         return [answer_list, answer]
@@ -174,19 +170,28 @@ def main():
     print(args)
     print('*****************************')
     fix_seed(args.random_seed)
+
+    # initialize cot template
     if args.CoT_template == 'None':
         cot_template = None
     else:
         cot_template = args.CoT_template
-    decoder = custom_api(tokenizer_path=args.tokenizer_path
-                                  , pretrained_model=args.model_tag)
-    # decoder=[]
+        
+    # initialize local decoder
+    if sub_dir=='Mistral_7B':
+        decoder = custom_api(tokenizer_path=args.tokenizer_path, 
+                             pretrained_model=args.model_tag)
+    else:
+        decoder = custom_api_others(tokenizer_path=args.tokenizer_path, 
+                                    pretrained_model=args.model_tag)
+        
     decoder = Nash_decoder(args.user_information, args.game_goalandtips, args.initial_template,
                            args.referee_template, args.answer_filter_template,args.engine_model, args.temperature, args, CoT_template=cot_template,
                            selected_players=args.selected_players, tolerance=args.tolerance,
                            initial_system=args.initial_system,
                            direct_answer_trigger=args.direct_answer_trigger_for_zeroshot_cot,
                            LLM=decoder)
+    
     print("setup data loader ...")
     dataloader = setup_data_loader(args)
     print_now()
@@ -211,6 +216,11 @@ def main():
         decoder.confine_player(x, max_length)
         for local_it in range(args.outer_loop):
             answers=[]
+            #---------------------------------------------------#
+            #                                                   #
+            #     Anwser Filtering (Algorithm 1 in our paper)   #
+            #                                                   #
+            #---------------------------------------------------#
             for iterations in range(args.inner_loop):
                 # Prepare question template ...
                 x, y = data
@@ -242,7 +252,11 @@ def main():
                 answers.append(pred)
             filtered_answers = decoder.reach_nash(x, args,answers, max_length=max_length)
             all.append(filtered_answers)
-        early_stop=False
+        #---------------------------------------------------#
+        #                                                   #
+        #     Anwser Filtering (Algorithm 2 in our paper)   #
+        #                                                   #
+        #---------------------------------------------------#
         record={}
         all_pre=[]
         for ans in all:
@@ -252,32 +266,33 @@ def main():
                     record[answer_star]=0
                 else:
                     record[answer_star]+=1
-
             all_pre.extend([answer_star,answer_list[0],answer_list[1]])
-
-        if record!={}:
+        if record!={}: # return the highest frequent answer that has reach preference equilibrium
             pred = max(record, key=lambda x: record[x])
-        else:
+        else:          # if no answer reaches preference equilibrium, then voting the highest frequence answer
             counter = Counter(all_pre)
             most_common_element = counter.most_common(1)[0][0]
-            # print(god_rational)
             pred = most_common_element
 
         print("pred : {}".format(pred))
         print("GT : " + y)
         print('*************************')
+        
         # Checking answer ...
         correct = (np.array([pred]) == np.array([y])).sum().item()
         correct_list.append(correct)
         total += 1  # np.array([y]).size(0)
         # Calculate accuracy ...
         accuracy = (sum(correct_list) * 1.0 / total) * 100
+        
         print("accuracy : {}".format(accuracy))
+        
         if not os.path.exists(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed))):
             nested_folder = Path(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed)))
             nested_folder.mkdir(parents=True)
         with open(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed),'training_results.pkl'),'wb') as f:
             pkl.dump({'acc':accuracy,'data':record},f)
+            
         if i>=args.capacity_one_epoch:
             break
 
@@ -334,8 +349,6 @@ def parse_arguments():
         "--outer_loop", type=int, default=3,
         help="maximum length of output tokens by model for answer extraction"
     )
-    
-    
     parser.add_argument(
         "--limit_dataset_size", type=int, default=10,
         help="whether to limit test dataset size. if 0, the dataset size is unlimited and we use all the samples in the dataset for testing."
@@ -403,6 +416,7 @@ def parse_arguments():
         '--answer_filter_template', type=str, default='prompts/answer_filter_template.txt'
     )
     args = parser.parse_args()
+    
     if args.dataset == "aqua":
         args.dataset_path = "dataset/AQuA/test.json"
         args.direct_answer_trigger = "\nTherefore, among A through E, the answer is"
@@ -442,6 +456,7 @@ def parse_arguments():
         args.direct_answer_trigger = "\nTherefore, the answer is"
     else:
         raise ValueError("dataset is not properly defined ...")
+        
     trigger = args.direct_answer_trigger.replace("\nTherefore, ", "")
     args.direct_answer_trigger_for_zeroshot = trigger[0].upper() + trigger[1:]
     args.direct_answer_trigger_for_zeroshot_cot = args.direct_answer_trigger
@@ -477,5 +492,6 @@ def parse_arguments():
     else:
         raise ValueError("cot_trigger_no is not properly defined ...")
     return args
+    
 if __name__ == "__main__":
     main()
