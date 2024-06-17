@@ -10,14 +10,14 @@ Here, we provide single case for CoT:
 
 
 ### The framework of Nash CoT:
-
+![image](https://github.com/MaiEmily/map/blob/master/public/image/20190528145810708.png](https://github.com/stevezhangzA/nash-chain-of-thought/edit/main/dedmonstration.png)
 ### Configuration
 
 ### How to run our code?
 
-'''
+```c
 sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
-'''
+```
 
 ### If you utilize our codebase, please cite below:
 
