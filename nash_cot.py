@@ -5,7 +5,7 @@ import random
 import time
 import os
 from utils import *
-from sentence_transformers import SentenceTransformer
+#from sentence_transformers import SentenceTransformer
 from local_decoder import custom_api
 
 from collections import Counter
@@ -97,18 +97,12 @@ class Nash_decoder(object):
         self.model = model
         self.temperature = temperature
         # initializing sentence model
-        self.encoder = SentenceTransformer(args.encoder)
+        self.encoder = None
         self.args = args
         # initialize sentence model
         self.args = args
         self.LLM = LLM
-
-    def point_the_optimal_agent(self, query, max_length=None):
-        messages = [{"role": "user",
-                     "content": f'current issue is {query}, and the best player is who? (please give us the number of that player):'}]
-        response_cur = self.LLM.inference(messages)
-        return re.findall('[0-9]', response_cur)
-
+    
     def point_the_optimal_agent_with_cot(self, query, max_length=None):
         choices = [str(id_) + '.' for id_ in range(100)]
         constructed_options = []
@@ -125,31 +119,7 @@ class Nash_decoder(object):
                      "content": initial_system["content"] + refree_question + '\n' + 'A: Let us think step by step.' + z + 'Therefore, the most appropriate player in this game is who? (please direct give us the number)'}]
         response_cur = self.LLM.inference(messages)
         return re.findall('[0-9]', response_cur)
-
-    def point_the_optimal_answer_with_cot(self,query,answer_list):
-        options=['0)','1)','2)','3)','4)','5)']
-        new_candidates=[options[i]+answer_list[i] for i in range(len(answer_list))]
-        bound_op=options[len(answer_list)-1]
-        answer_filter=self.answer_filter_template.format(player=self.all_player_list[self.optimal_player_id],
-                                                         instruction=self.user_information[self.all_player_list[self.optimal_player_id]],
-                                                         query=query,
-                                                         options=', '.join(new_candidates))
-        messages = [{"role": "user",
-                     "content": answer_filter}]
-        z = self.LLM.inference(messages) 
-        while(1):
-            messages = [{"role": "user",
-                     "content": answer_filter + z + f'Therefore, among 0) throught {bound_op}, the answer is'}]
-            response_cur = self.LLM.inference(messages)
-            optimal_choice=re.findall('[0-9]',response_cur)
-            try:
-                id_=re.findall('[0-9]', response_cur)
-                pred=answer_list[int(id_[-1])]
-                break
-            except:
-                pass
-        return pred,z
-
+    
     def answer_filter(self,query,answer_list,args):
 
         message=[{"role": "user",
@@ -164,32 +134,31 @@ class Nash_decoder(object):
         answer = self.LLM.inference(message)
         answer=answer_cleansing(args, answer)
         return [answer_list, answer]
-    
 
-    #def reach_nash(self, query, args, answers, max_length):
-    #    print("point out the most appropriate player")
-    #    while 1:
-    #        try:
-    #            optimal_player_id = self.point_the_optimal_agent_with_cot(query, max_length=max_length)
-    #            self.optimal_player_id = int(eval(optimal_player_id[-1]))
-    #            if self.optimal_player_id not in list(range(len(self.all_player_list))):
-    #                continue
-    #            break
-    #        except:
-    #            pass
-    #    return self.answer_filter(answer_list=answers,query=query,args=args)
-    
     def confine_player(self,query,max_length):
         print("point out the most appropriate player")
         while 1:
             try:
-                optimal_player_id = self.point_the_optimal_agent_with_cot(query, max_length=max_length)
-                self.optimal_player_id = int(eval(optimal_player_id[-1]))
                 if self.optimal_player_id not in list(range(len(self.all_player_list))):
                     continue
                 break
             except:
                 pass
+
+    def reach_nash(self, query,
+                   args,answers,
+                   max_length):
+        print("point out the most appropriate player")
+        while 1:
+            try:
+                #optimal_player_id = self.point_the_optimal_agent_with_cot(query, max_length=max_length)
+                #self.optimal_player_id = int(eval(optimal_player_id[-1]))
+                if self.optimal_player_id not in list(range(len(self.all_player_list))):
+                    continue
+                break
+            except:
+                pass
+        return self.answer_filter(answer_list=answers,query=query,args=args)
 
     def answer_clean(self, pre_answer , args):
         pred = answer_cleansing(args, pre_answer)
@@ -209,10 +178,8 @@ def main():
         cot_template = None
     else:
         cot_template = args.CoT_template
-    decoder = custom_api(
-        tokenizer_path=args.tokenizer_path
-        , pretrained_model=args.model_tag
-    )
+    decoder = custom_api(tokenizer_path=args.tokenizer_path
+                                  , pretrained_model=args.model_tag)
     # decoder=[]
     decoder = Nash_decoder(args.user_information, args.game_goalandtips, args.initial_template,
                            args.referee_template, args.answer_filter_template,args.engine_model, args.temperature, args, CoT_template=cot_template,
@@ -241,10 +208,10 @@ def main():
         y = y[0].strip()
         max_length = args.max_length_cot if "cot" in args.method else args.max_length_direct
         all=[]
-        decoder.confine_player(x,max_length)
-        for local_it in range(3):
+        decoder.confine_player(x, max_length)
+        for local_it in range(args.outer_loop):
             answers=[]
-            for iterations in range(2):
+            for iterations in range(args.inner_loop):
                 # Prepare question template ...
                 x, y = data
                 x = "Q: " + x[0] + "\n" + "A:"
@@ -267,11 +234,9 @@ def main():
                     z2 = x + z + " " + args.direct_answer_trigger_for_zeroshot_cot
                     max_length = args.max_length_direct
                     pred = decoder.LLM.inference([{"role": "user", "content": z2}])
-                    #record.append(z2 + pred)
                     print(z2 + pred)
                 else:
                     pred = z
-                    #record.append(x+z)
                     print(x + pred)
                 pred = answer_cleansing(args, pred)
                 answers.append(pred)
@@ -308,10 +273,10 @@ def main():
         # Calculate accuracy ...
         accuracy = (sum(correct_list) * 1.0 / total) * 100
         print("accuracy : {}".format(accuracy))
-        if not os.path.exists(os.path.join('loggings',args.proj_name,args.sub_dir,args.method,args.dataset,str(args.random_seed))):
-            nested_folder = Path(os.path.join('loggings',args.proj_name,args.sub_dir,args.method,args.dataset,str(args.random_seed)))
+        if not os.path.exists(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed))):
+            nested_folder = Path(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed)))
             nested_folder.mkdir(parents=True)
-        with open(os.path.join('loggings',args.proj_name,args.sub_dir,args.method,args.dataset,str(args.random_seed),'training_results.pkl'),'wb') as f:
+        with open(os.path.join('loggings','ablation',args.sub_dir,f'{args.inner_loop}-{args.outer_loop}',args.method,args.dataset,str(args.random_seed),'training_results.pkl'),'wb') as f:
             pkl.dump({'acc':accuracy,'data':record},f)
         if i>=args.capacity_one_epoch:
             break
@@ -361,6 +326,16 @@ def parse_arguments():
         "--max_length_direct", type=int, default=32,
         help="maximum length of output tokens by model for answer extraction"
     )
+    parser.add_argument(
+        "--inner_loop", type=int, default=2,
+        help="maximum length of output tokens by model for reasoning extraction"
+    )
+    parser.add_argument(
+        "--outer_loop", type=int, default=3,
+        help="maximum length of output tokens by model for answer extraction"
+    )
+    
+    
     parser.add_argument(
         "--limit_dataset_size", type=int, default=10,
         help="whether to limit test dataset size. if 0, the dataset size is unlimited and we use all the samples in the dataset for testing."
@@ -504,6 +479,3 @@ def parse_arguments():
     return args
 if __name__ == "__main__":
     main()
-
-
-
