@@ -29,8 +29,12 @@ Nash CoT utilize question related contextual information as the template to infe
 ## Configuration and experiment
 
 ### Configuration
-
 ```c
+# python version:
+# system : Linux
+# PyTorch :
+# Huggingface Transformer
+
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
 
@@ -45,6 +49,9 @@ cd nash-chain-of-thought && pip install -r requirements.txt
 #  tokenizer_path: same as model_path
 # subsquently, we provide a case below:
 sh run_nash_cot.sh aqua 0 tokenizer_path model_path
+sh run_nash_cot.sh aqua 2 tokenizer_path model_path
+sh run_nash_cot.sh aqua 4 tokenizer_path model_path
+python averged_results.py --root_results=
 ```
 
 ### We list severl un-controllabel factors:
