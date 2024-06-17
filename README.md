@@ -6,7 +6,7 @@
 
 CoT is a *step-by-step* manner inference approach. 
 
-Requirement: we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
+Requirement (we just provide one example): we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
 
 This approach is composed of two steps:
 
