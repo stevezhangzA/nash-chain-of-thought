@@ -6,16 +6,20 @@
 
 CoT is a *step-by-step* manner inference approach. 
 
-Requirement (we just provide one example): we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
+Requirement (Here, we provide single template case for CoT): we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
 
 This approach is composed of two steps:
 
 - Step1 (obtain rational): Generating rational: z=LLM( |x, prompt)
 - Step2 (obtain answer)  : Obtain answer      : a=LLM( |x, prompt, z, trigger)
 
-Here, we provide single case for CoT:
+## Multi path inference with CoT
+
+Previously, [2] showcase that multi-path CoT inference with voting the highest frequency answer can improve the accuracy of prediction. However, it's computing in-sufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
 
 ### The framework of Nash CoT:
+
+Nash CoT utilize template to guide LLM correctly answer the question and 
 
 ![image](demonstration.png)
 
@@ -62,6 +66,13 @@ This reseach is fincially supported by MiLab at WestLake Univeristy.
 
 zero-shot/zero-shot-cot/self-consistency are implemented by ourself.
 
+
+# Collaberation 
+
+If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable generation  
+
+Both of my E-mile (stevezhangz98a@gmail.com) and adding new blog to this project are welcomed. 
+
 ### *Reference*
 
 [1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. 2022. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. Preprint. arXiv: 2201.11903.
@@ -75,9 +86,3 @@ zero-shot/zero-shot-cot/self-consistency are implemented by ourself.
 [5] Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, William El Sayed. 2022. Mistral 7B. Preprint. arXiv: 2310.06825.
 
 [6] 
-
-# Collaberation 
-
-If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable generation  
-
-Both of my E-mile (stevezhangz98a@gmail.com) and adding new blog to this project are welcomed. 
