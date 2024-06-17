@@ -62,7 +62,8 @@ It means that if you can attention these un-controllabel factors,  your performa
     author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
     year={2024},
     eprint={},
-    archivePrefix={arXiv}}
+    archivePrefix={arXiv}
+}
 ```
 
 ## Thanks 
