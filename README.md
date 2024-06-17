@@ -50,7 +50,7 @@ Our codebase is modified from the codebase of Automatic CoT, and our local decod
 
 Addtionally, thanks my collaberator: Cunxiang Wang
 
-This reseach is supported by MiLab at WestLake Univeristy.
+This reseach is fincially supported by MiLab at WestLake Univeristy.
 
 ### Other details:
 
