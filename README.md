@@ -11,6 +11,8 @@ Here, we provide single case for CoT:
 
 ### The framework of Nash CoT:
 
+### Configuration
+
 ### How to run our code?
 
 '''
@@ -30,17 +32,22 @@ archivePrefix={arXiv},
 ```
 
 ### Thanks 
+
 We utilize these models: GLM, MIS-7B, self-consistency, Auto-CoT for evaluation.
 
 Our codebase is modified from the codebase of Automatic CoT
 
 Addtionally, thanks my collerberator: Cunxiang Wang
 
+This reseach is supported by milab.
+
 ### *Reference*
 
-[1] 
+[1] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed Chi, Quoc Le, Denny Zhou. 2022. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. Preprint. arXiv: 2201.11903.
 
-[2]
+[2] Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdhery, Denny Zhou. 2022. Self-Consistency Improves Chain of Thought Reasoning in Language Models. Preprint. arXiv: 2203.11171.
+
+[3] Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdhery, Denny Zhou. 2022. Self-Consistency Improves Chain of Thought Reasoning in Language Models. Preprint. arXiv: 2203.11171.
 
 # Collaberation 
 
