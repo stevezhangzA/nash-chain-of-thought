@@ -14,6 +14,10 @@ Here, we provide single case for CoT:
 
 ### Configuration
 
+```c
+cd nash-chain-of-thought && pip install -r requirements.txt
+```
+
 ### How to run our code?
 
 ```c
