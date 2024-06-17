@@ -49,8 +49,10 @@ sh run_nash_cot.sh aqua 0 tokenizer_path model_path
 
 ### We list severl un-controllabel factors:
 
-- We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer.
-- We find that the template is are
+It means that if you can attention these un-controllabel factors,  your performance maybe better than us.
+
+- We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer. Therefore, you can desing specific template for Llama
+- We find that the player templates also impact LLM's performance. Thus we advocate users to discover more competitive templates, thereby further improving the performance of Nash CoT.
 
 ## If you utilize our codebase, please cite below:
 
