@@ -218,7 +218,7 @@ def main():
             answers=[]
             #---------------------------------------------------#
             #                                                   #
-            #     Anwser Filtering (Algorithm 1 in our paper)   #
+            #     Anwser gathering (Algorithm 1 in our paper)   #
             #                                                   #
             #---------------------------------------------------#
             for iterations in range(args.inner_loop):
