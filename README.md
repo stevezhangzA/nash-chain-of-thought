@@ -62,10 +62,6 @@ Addtionally, thanks my collaberator: Cunxiang Wang
 
 This reseach is fincially supported by MiLab at WestLake Univeristy.
 
-### Other details:
-
-zero-shot/zero-shot-cot/self-consistency are implemented by ourself.
-
 
 # Collaberation 
 
