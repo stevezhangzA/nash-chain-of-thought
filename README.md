@@ -34,7 +34,6 @@ Nash CoT utilize question related contextual information as the template to infe
 # system : Linux
 # PyTorch :
 # Huggingface Transformer
-
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
 
@@ -104,4 +103,3 @@ Both of my E-mail (stevezhangz98a@gmail.com) and adding new blog to this project
 
 [5] Albert Q. Jiang, Alexandre Sablayrolles, Arthur Mensch, Chris Bamford, Devendra Singh Chaplot, Diego de las Casas, Florian Bressand, Gianna Lengyel, Guillaume Lample, Lucile Saulnier, Lélio Renard Lavaud, Marie-Anne Lachaux, Pierre Stock, Teven Le Scao, Thibaut Lavril, Thomas Wang, Timothée Lacroix, William El Sayed. 2022. Mistral 7B. Preprint. arXiv: 2310.06825.
 
-[6] 
