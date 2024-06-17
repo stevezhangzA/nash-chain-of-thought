@@ -1,6 +1,6 @@
 # Nash Chain-of-Thought (CoT)
 
-### Description: This is the official codebase of Nash CoT
+*Description:* This is the official codebase of Nash CoT
 
 ### What's CoT
 
