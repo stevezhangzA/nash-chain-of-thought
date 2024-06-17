@@ -37,7 +37,14 @@ cd nash-chain-of-thought && pip install -r requirements.txt
 ### Experiment
 
 ```c
-sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
+# sh run_nash_cot.sh dataset random_seed tokenizer_path model_path
+#  in particular,
+#  datasets    : All datasets' name are listed in the configuration in nash_cot.py
+#  random_seed : int
+#  model_path  : we utilize huggingface to localy deploy LLM, model_path represent catche_dir 
+#  tokenizer_path: same as model_path
+# subsquently, we provide a case below:
+sh run_nash_cot.sh aqua 0 tokenizer_path model_path
 ```
 
 ### We list severl un-controllabel factors:
