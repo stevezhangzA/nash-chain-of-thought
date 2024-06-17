@@ -52,7 +52,7 @@ sh run_nash_cot.sh aqua 0 tokenizer_path model_path
 - We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer.
 - We find that the template is are
 
-### If you utilize our codebase, please cite below:
+## If you utilize our codebase, please cite below:
 
 ```c
 @article{,
@@ -64,7 +64,7 @@ archivePrefix={arXiv},
 }
 ```
 
-### Thanks 
+## Thanks 
 
 We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above (*We list severl un-controllabel factors*). 
 
