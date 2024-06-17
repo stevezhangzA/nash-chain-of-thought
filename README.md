@@ -6,12 +6,12 @@
 
 CoT is a *step-by-step* manner inference approach. 
 
-Requirement (Here, we provide a case of CoT's template): 
+Here, we provide a case of CoT's template: 
 - *question: x*,  
 - *prompt: 'Let's think step by step'*, 
 - *trigger: 'Therefore, the answer is:'* 
 
-This approach is composed of two steps:
+Meanwhile, this approach is composed of two steps:
 
 - Step1 (obtain rational): *z=LLM(\cdot|x, prompt)* 
 - Step2 (obtain answer)  : *a=LLM(\cdot|x, prompt, z, trigger)*
@@ -22,7 +22,7 @@ Previously, self-consistency[2] showcase that multi-path CoT inference with voti
 
 ### The framework of Nash CoT:
 
-Nash CoT utilize question related contextual information as the template to inference in each path, while utilizing Preference Equilibrium to allivate overconfident generation.
+Nash CoT utilize question related contextual information as the template to inference in each path, while utilizing Preference Equilibrium to allivate overconfident generation. IN particular, as shown in the demonstration below, if the template guided generation is in the mini-batch inference (has been labeled), it means that such generation reaches preference Equilibrium. Finally, we return the highest frequency that reached Preference Equilibrium.  
 
 ![image](demonstration.png)
 
