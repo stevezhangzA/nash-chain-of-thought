@@ -30,15 +30,18 @@ archivePrefix={arXiv},
 ```
 
 ### Thanks 
-WeGLM, MIS-7B, self-consistency, Auto-CoT.
+We utilize these models: GLM, MIS-7B, self-consistency, Auto-CoT for evaluation.
 
-Addtionally, thanks my collerberator:
+Our codebase is modified from the codebase of Automatic CoT
 
-*Reference*
+Addtionally, thanks my collerberator: Cunxiang Wang
+
+### *Reference*
+
 [1] 
 
 [2]
 
-# Finnaly 
+# Collaberation 
 
 If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergence experimental results!
