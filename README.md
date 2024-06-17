@@ -26,13 +26,15 @@ Nash CoT utilize question related contextual information as the template to infe
 
 ![image](demonstration.png)
 
+## Configuration and experiment
+
 ### Configuration
 
 ```c
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
 
-### How to run our code?
+### Experiment
 
 ```c
 sh run_nash_cot.sh data_setname random_seed tokenizer_path model_path
