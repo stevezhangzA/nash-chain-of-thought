@@ -43,14 +43,16 @@ cd nash-chain-of-thought && pip install -r requirements.txt
 ```c
 # sh run_nash_cot.sh dataset random_seed tokenizer_path model_path
 #  in particular,
-#  datasets    : All datasets' name are listed in the configuration in nash_cot.py
-#  random_seed : int
-#  model_path  : we utilize huggingface to localy deploy LLM, model_path represent catche_dir 
-#  tokenizer_path: same as model_path
+#  $1: datasets, all datasets' name are listed in the configuration in nash_cot.py
+#  $2: random_seed (int)
+#  $3: model_path, we utilize huggingface to localy deploy LLM, model_path represent catche_dir 
+#  $3: tokenizer_path: same as model_path
+#  $4: outer loop
+#  $5: inner loop
 # subsquently, we provide a case below:
-sh run_nash_cot.sh aqua 0 tokenizer_path model_path
-sh run_nash_cot.sh aqua 2 tokenizer_path model_path
-sh run_nash_cot.sh aqua 4 tokenizer_path model_path
+sh run_nash_cot.sh aqua 0 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
+sh run_nash_cot.sh aqua 2 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
+sh run_nash_cot.sh aqua 4 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
 python averged_results.py --root_results=
 ```
 
