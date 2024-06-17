@@ -35,13 +35,17 @@ archivePrefix={arXiv},
 
 ### Thanks 
 
-We utilize these models: GLM, MIS-7B, self-consistency, Auto-CoT for evaluation.
+We utilize these models: GLM, MIS-7B.
 
 Our codebase is modified from the codebase of Automatic CoT
 
-Addtionally, thanks my collerberator: Cunxiang Wang
+Addtionally, thanks my collaberator: Cunxiang Wang
 
 This reseach is supported by MiLab at WestLake Univeristy.
+
+### Other details:
+
+zero-shot/zero-shot-cot/self-consistency are implemented by ourself.
 
 ### *Reference*
 
@@ -59,6 +63,6 @@ This reseach is supported by MiLab at WestLake Univeristy.
 
 # Collaberation 
 
-If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results!
+If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable inference 3) 
 
 Both of my e-mile and adding new blog to this project is welcomed. 
