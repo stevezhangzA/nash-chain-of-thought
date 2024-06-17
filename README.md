@@ -58,12 +58,11 @@ It means that if you can attention these un-controllabel factors,  your performa
 
 ```c
 @article{,
-title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
-author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
-year={2024},
-eprint={},
-archivePrefix={arXiv},
-}
+    title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
+    author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
+    year={2024},
+    eprint={},
+    archivePrefix={arXiv}}
 ```
 
 ## Thanks 
