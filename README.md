@@ -4,10 +4,14 @@
 
 ### What's CoT
 
-CoT is a *step-by-step* manner inference approach. This approach is composed of two steps. Assume we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
+CoT is a *step-by-step* manner inference approach. 
 
-- Step1: Generating rational: z=LLM( |x, prompt)
-- Step2: Obtain answer: a=LLM( |x, prompt, z, trigger)
+Requirement: we have question x, prompt: 'Let's think step by step', trigger: 'Therefore, the answer is:' 
+
+This approach is composed of two steps:
+
+- Step1 (obtain rational): Generating rational: z=LLM( |x, prompt)
+- Step2 (obtain answer)  : Obtain answer      : a=LLM( |x, prompt, z, trigger)
 
 Here, we provide single case for CoT:
 
