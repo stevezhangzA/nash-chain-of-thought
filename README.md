@@ -41,7 +41,7 @@ Our codebase is modified from the codebase of Automatic CoT
 
 Addtionally, thanks my collerberator: Cunxiang Wang
 
-This reseach is supported by milab.
+This reseach is supported by MiLab at WestLake Univeristy.
 
 ### *Reference*
 
@@ -60,3 +60,5 @@ This reseach is supported by milab.
 # Collaberation 
 
 If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results!
+
+Both of my e-mile and adding new blog to this project is welcomed. 
