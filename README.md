@@ -45,7 +45,7 @@ archivePrefix={arXiv},
 
 We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above. 
 
-Our codebase is modified from the codebase of Automatic CoT
+Our codebase is modified from the codebase of Automatic CoT, and our local decoder is built based on Huggingface Transformer
 
 Addtionally, thanks my collaberator: Cunxiang Wang
 
