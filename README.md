@@ -11,7 +11,7 @@ Here, we provide single case for CoT:
 
 ### The framework of Nash CoT:
 
-![image](https://github.com/stevezhangzA/nash-chain-of-thought/edit/main/demonstration.png)
+![image](demonstration.png)
 
 ### Configuration
 
