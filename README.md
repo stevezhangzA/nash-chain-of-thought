@@ -69,9 +69,9 @@ This means that if you can address these uncontrollable factors (designing a bet
 - We found that each LLM has its own unique characteristics. For instance, given a prompt, Llama3 can directly answer the question, whereas Mistral-Instruct (7B) requires a predefined trigger to guide it to the final answer. Therefore, you can design specific templates tailored for Llama3.
 - We found that player templates significantly impact the performance of LLMs. Therefore, we encourage users to explore more effective templates to further enhance the performance of Nash CoT.
 
-### Introduction of our player template
+### The player templates we utilized:
 
-we totally set up 6 roles:
+We totally set up 6 distinct player templates (in *prompt/player_instruction.pkl*) below:
 
 role      | player template 
 --------  | --------------------- 
@@ -81,7 +81,9 @@ Philosopher   | You are a philosopher, your knowledge base includes a wealth of 
 geographer    | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
 statesman     | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
 
-### Meanwhile, we provide some our runned loggings
+You can study the impact of player templates by changing *prompt/player_instruction.pkl*.
+
+### Meanwhile, we provide some our runned loggings 
 
 Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|CommonsensQA|
 --------  | ----- | ----- | ----- |----- |----- |-----|-----|
