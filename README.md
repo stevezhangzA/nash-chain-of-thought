@@ -69,6 +69,18 @@ It means that if you can attention these un-controllabel factors,  your performa
 - We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer. Therefore, you can desing specific template for Llama
 - We find that the player templates also impact LLM's performance. Thus we advocate users to discover more competitive templates, thereby further improving the performance of Nash CoT.
 
+### Introduction of our player template
+
+we totally set up 6 roles:
+
+role      | player template 
+--------  | --------------------- 
+mathematician | You are a mathematician, you excel at analyzing problems from a mathematical logical perspective and arrive at conclusions that align with your values.
+litterateur | You are a literary scholar who has read a vast array of literary works. Please consider the problem from the perspective of a literary scholar.
+Philosopher | You are a philosopher, your knowledge base includes a wealth of philosophical knowledge. You enjoy approaching problems from a philosophical perspective and arriving at conclusions that align with your values.
+geographer | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
+statesman | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
+
 ### Meanwhile, we provide some our runned loggings
 
 Model     | Method | AQuA | GSM8K| Coin Flip |
