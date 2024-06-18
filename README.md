@@ -27,15 +27,6 @@ Nash CoT utilize question related contextual information as the template to infe
 ![image](demonstration.png)
 
 ## Configuration and experiment
-### how to download LLM
-```c
-# Through these commands you can download LLM from huggingface transformer
-from transformers import AutoModelForCausalLM, AutoTokenizer
-model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
-# However, some LLMs require specific command, such that GLM4 has to set trust_remote_code=True,
-```
-
 ### Configuration
 ```c
 # python version          : 3.8
@@ -47,9 +38,15 @@ conda activate nash_cot
 unzip nash-chain-of-thought.zip
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
-
+### how to download LLM
+```c
+# Through these commands you can download LLM from huggingface transformer
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
+# However, some LLMs require specific command, such that GLM4 has to set trust_remote_code=True,
+```
 ### Experiment
-
 ```c
 # sh run_nash_cot.sh dataset random_seed tokenizer_path model_path
 #  in particular,
