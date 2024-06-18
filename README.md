@@ -63,10 +63,10 @@ It means that if you can attention these un-controllabel factors,  your performa
 
 ### Meanwhile, we provide some our runned loggings
 
-Model     | Method | AQuA | Coin Flip |
---------  | ----- | ----- | ----- |
-Mistralai-Instruct (7B) | self-consistency | | |
-Mistralai-Instruct (7B) | Nash CoT | | |
+Model     | Method | AQuA | GSM8K| Coin Flip |
+--------  | ----- | ----- | ----- |----- |
+Mistralai-Instruct (7B) | self-consistency | | | |
+Mistralai-Instruct (7B) | Nash CoT | | | |
 
 ## If you utilize our codebase, please cite below:
 
