@@ -1,0 +1,1 @@
+{player_key} The current issue is : {query} \n {cot_prompt}
