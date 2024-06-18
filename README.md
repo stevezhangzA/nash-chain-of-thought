@@ -39,6 +39,7 @@ PyTorch | 2.0.0 |
 conda create --name nash_cot python=3.8
 conda activate nash_cot
 unzip nash-chain-of-thought.zip
+# or : git clone https://github.com/stevezhangzA/nash-chain-of-thought.git
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
 ### how to download LLM
