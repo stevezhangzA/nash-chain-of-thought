@@ -52,7 +52,6 @@ cd nash-chain-of-thought && pip install -r requirements.txt
 sh run_nash_cot.sh aqua 0 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
 sh run_nash_cot.sh aqua 2 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
 sh run_nash_cot.sh aqua 4 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
-python averged_results.py --root_results=
 ```
 
 ### We list severl un-controllabel factors:
