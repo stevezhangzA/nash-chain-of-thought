@@ -88,6 +88,8 @@ Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|Co
 Mistralai-Instruct (7B) | self-consistency |34.4 $\pm$ 6.1 | 58.5 $\pm$ 2.8|  21.9 $\pm$ 4.7|38.8 $\pm$ 0.8|47.0 $\pm$ 1.5 | 71.0 $\pm$ 3.4|
 Mistralai-Instruct (7B) | Nash CoT |39.9 $\pm$ 5.4| 55.7 $\pm$ 5.8 |29.0 $\pm$ 5.4 | 44.8 $\pm$ 2.0 | 41.1 $\pm$ 1.2| 69.4 $\pm$ 4.7|
 
+We selected several representative tasks from Arabic reasoning, symbolic inference and CommonsenseQA, and dumped in the folder named logging.
+
 ## Thanks 
 
 We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above (*un-controllabel factors*). 
