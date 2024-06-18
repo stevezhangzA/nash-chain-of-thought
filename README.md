@@ -83,10 +83,10 @@ statesman   | You are a politician, and your decision-making process stems from 
 
 ### Meanwhile, we provide some our runned loggings
 
-Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|
---------  | ----- | ----- | ----- |----- |----- |----- |
-Mistralai-Instruct (7B) | self-consistency | | | || |
-Mistralai-Instruct (7B) | Nash CoT | | | || |
+Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|CommonsensQA|
+--------  | ----- | ----- | ----- |----- |----- |-----|-----|
+Mistralai-Instruct (7B) | self-consistency | | | || | |
+Mistralai-Instruct (7B) | Nash CoT | | | || ||
 
 ## Thanks 
 
