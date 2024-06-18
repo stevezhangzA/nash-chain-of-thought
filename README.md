@@ -34,6 +34,9 @@ Nash CoT utilize question related contextual information as the template to infe
 # system : Linux
 # PyTorch :
 # Huggingface Transformer
+conda create --name nash_cot python=3.8
+conda activate nash_cot
+unzip nash-chain-of-thought.zip
 cd nash-chain-of-thought && pip install -r requirements.txt
 ```
 
