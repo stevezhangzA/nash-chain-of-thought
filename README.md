@@ -88,18 +88,6 @@ Model     | Method | AQuA | GSM8K| Coin Flip |
 Mistralai-Instruct (7B) | self-consistency | | | |
 Mistralai-Instruct (7B) | Nash CoT | | | |
 
-## If you utilize our codebase, please cite below:
-
-```c
-@article{,
-    title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
-    author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
-    year={2024},
-    eprint={},
-    archivePrefix={arXiv}
-}
-```
-
 ## Thanks 
 
 We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above (*un-controllabel factors*). 
@@ -110,6 +98,16 @@ Addtionally, thanks my collaberator: Cunxiang Wang
 
 This reseach is sponsored by MiLab at WestLake Univeristy.
 
+### If you utilize our codebase, please cite below:
+```c
+@article{,
+    title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
+    author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
+    year={2024},
+    eprint={},
+    archivePrefix={arXiv}
+}
+```
 
 # Collaberation 
 
