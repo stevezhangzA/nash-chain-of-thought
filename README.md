@@ -100,7 +100,7 @@ Addtionally, thanks my collaberator: Cunxiang Wang
 
 This reseach is sponsed by MiLab at WestLake Univeristy.
 
--If you utilize our codebase, please cite below:-
+*If you utilize our codebase, please cite below:*
 ```c
 @article{,
     title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
