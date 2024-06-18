@@ -18,11 +18,11 @@ Meanwhile, this approach is composed of two steps:
 
 ### Multi-path inference with CoT
 
-Previously, self-consistency[2] showcase that multi-path CoT inference with voting the highest frequency answer can improve the accuracy of prediction. However, it's computing in-sufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
+Previously, self-consistency[2] demonstrates that using multi-path CoT inference with voting for the highest frequency answer can improve the accuracy of predictions. However, its computation is insufficient to conduct multi-path inference. Therefore, we propose Nash CoT to solve this limitation.
 
 ### The framework of Nash CoT:
 
-Nash CoT utilize question related contextual information as the template to inference in each path, while utilizing Preference Equilibrium to allivate overconfident generation. IN particular, as shown in the demonstration below, if the template guided generation is in the mini-batch inference (has been labeled), it means that such generation reaches preference Equilibrium. Finally, we return the highest frequency that reached Preference Equilibrium.  
+Nash CoT uses question-related contextual information as a template for making inferences in each path. It also utilizes Preference Equilibrium to reduce overconfident generation. Specifically, as illustrated below, if the generation is guided by the template during mini-batch inference and has been labeled, it indicates that the generation has reached preference equilibrium. Ultimately, we identify the highest frequency that has reached preference equilibrium.
 
 ![image](demonstration.png)
 
@@ -62,12 +62,12 @@ sh run_nash_cot.sh aqua 2 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3
 sh run_nash_cot.sh aqua 4 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
 ```
 
-### We list several un-controllable factors during the evaluation process:
+### We list several uncontrollable factors during the evaluation process:
 
-It means that if you can attention these un-controllabel factors,  your performance maybe better than us.
+This means that if you can address these uncontrollable factors (designing a better template etc.), your experimental performance may surpass ours.
 
-- We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer. Therefore, you can desing specific template for Llama
-- We find that the player templates also impact LLM's performance. Thus we advocate users to discover more competitive templates, thereby further improving the performance of Nash CoT.
+- We found that each LLM has its own unique characteristics. For instance, given a prompt, Llama3 can directly answer the question, whereas Mistral-Instruct (7B) requires a predefined trigger to guide it to the final answer. Therefore, you can design specific templates tailored for Llama3.
+- We found that player templates significantly impact the performance of LLMs. Therefore, we encourage users to explore more effective templates to further enhance the performance of Nash CoT.
 
 ### Introduction of our player template
 
@@ -76,10 +76,10 @@ we totally set up 6 roles:
 role      | player template 
 --------  | --------------------- 
 mathematician | You are a mathematician, you excel at analyzing problems from a mathematical logical perspective and arrive at conclusions that align with your values.
-litterateur | You are a literary scholar who has read a vast array of literary works. Please consider the problem from the perspective of a literary scholar.
-Philosopher | You are a philosopher, your knowledge base includes a wealth of philosophical knowledge. You enjoy approaching problems from a philosophical perspective and arriving at conclusions that align with your values.
-geographer  | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
-statesman   | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
+litterateur   | You are a literary scholar who has read a vast array of literary works. Please consider the problem from the perspective of a literary scholar.
+Philosopher   | You are a philosopher, your knowledge base includes a wealth of philosophical knowledge. You enjoy approaching problems from a philosophical perspective and arriving at conclusions that align with your values.
+geographer    | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
+statesman     | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
 
 ### Meanwhile, we provide some our runned loggings
 
@@ -88,17 +88,17 @@ Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|Co
 Mistralai-Instruct (7B) | self-consistency |34.4 $\pm$ 6.1 | 58.5 $\pm$ 2.8|  21.9 $\pm$ 4.7|38.8 $\pm$ 0.8|47.0 $\pm$ 1.5 | 71.0 $\pm$ 3.4|
 Mistralai-Instruct (7B) | Nash CoT |39.9 $\pm$ 5.4| 55.7 $\pm$ 5.8 |29.0 $\pm$ 5.4 | 44.8 $\pm$ 2.0 | 41.1 $\pm$ 1.2| 69.4 $\pm$ 4.7|
 
-We selected several representative tasks from Arabic reasoning, symbolic inference and CommonsenseQA, and dumped in the folder named logging.
+We selected several representative tasks from Arabic reasoning, symbolic inference, and CommonsenseQA, and saved them in a folder named "logging".
 
 ## Thanks 
 
-We utilize these models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5], we are also welcomed friends further evaluate Nash CoT with LLama3-Instruct [6], however, there are some concerns metioned above (*un-controllabel factors*). 
+We use the following models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5]. We have also introduced Nash CoT with LLama3-Instruct [6]. However, there are concerns regarding uncontrollable factors mentioned above. 
 
-Our codebase is modified from the codebase of Automatic CoT, and our local decoder is built based on Huggingface Transformer
+Our codebase has been derived from Automatic CoT's codebase, and our local decoder has been constructed using Huggingface Transformer.
 
 Addtionally, thanks my collaberator: Cunxiang Wang
 
-This reseach is sponsored by MiLab at WestLake Univeristy.
+This reseach is sponsed by MiLab at WestLake Univeristy.
 
 ### If you utilize our codebase, please cite below:
 ```c
@@ -112,9 +112,9 @@ This reseach is sponsored by MiLab at WestLake Univeristy.
 ```
 # Collaberation 
 
-If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable generation  
+If you discover any new uses for Nash CoT, please feel free to contact us and provide new experimental results. For example: 1) You conduct an evaluation on LLama, GPT, etc. 2) You find that this approach can be scaled to another setting, such as controllable generation.
 
-Both of my E-mail (stevezhangz98a@gmail.com) and adding new blog to this project are welcomed. 
+Both my email (stevezhangz98a@gmail.com) and adding a new blog to this project are welcome.
 
 ## *Reference*
 
