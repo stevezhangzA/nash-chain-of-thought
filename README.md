@@ -61,6 +61,13 @@ It means that if you can attention these un-controllabel factors,  your performa
 - We find that any LLM has their own features, such that once giving some prompt, llama3 can direct answer the question, but Mistral-Instruct (7B) requires pre-defined trigger to guide to deliver the final answer. Therefore, you can desing specific template for Llama
 - We find that the player templates also impact LLM's performance. Thus we advocate users to discover more competitive templates, thereby further improving the performance of Nash CoT.
 
+### Meanwhile, we provide some our runned loggings
+
+Model     | Method | Aqua
+--------  | ----- | ----- 
+Mistralai-Instruct (7B) | self-consistency
+Mistralai-Instruct (7B) | Nash CoT
+
 ## If you utilize our codebase, please cite below:
 
 ```c
