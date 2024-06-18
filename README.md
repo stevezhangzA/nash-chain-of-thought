@@ -94,7 +94,7 @@ We selected several representative tasks from Arabic reasoning, symbolic inferen
 
 ## *Thanks* 
 
-We use the following models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5]. We have also introduced Nash CoT with LLama3-Instruct [6]. However, there are concerns regarding uncontrollable factors mentioned above. 
+We use the following models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5]. We have also advocated utlizing Nash CoT with LLama3-Instruct [6]. However, there are concerns regarding uncontrollable factors mentioned above. 
 
 Our codebase has been derived from Automatic CoT's codebase, and our local decoder has been constructed using Huggingface Transformer.
 
