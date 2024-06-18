@@ -57,7 +57,7 @@ sh run_nash_cot.sh aqua 2 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3
 sh run_nash_cot.sh aqua 4 ./hf_hub/models--mistralai--Mistral-7B-Instruct-v0.2 3 2
 ```
 
-### We list severl un-controllabel factors:
+### We list several un-controllable factors:
 
 It means that if you can attention these un-controllabel factors,  your performance maybe better than us.
 
@@ -91,7 +91,7 @@ Our codebase is modified from the codebase of Automatic CoT, and our local decod
 
 Addtionally, thanks my collaberator: Cunxiang Wang
 
-This reseach is fincially supported by MiLab at WestLake Univeristy.
+This reseach is sponsored by MiLab at WestLake Univeristy.
 
 
 # Collaberation 
