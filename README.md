@@ -90,7 +90,7 @@ Mistralai-Instruct (7B) | Nash CoT |39.9 $\pm$ 5.4| 55.7 $\pm$ 5.8 |29.0 $\pm$ 5
 
 We selected several representative tasks from Arabic reasoning, symbolic inference, and CommonsenseQA, and saved them in a folder named "logging".
 
-## Thanks 
+## *Thanks* 
 
 We use the following models: GLM4-chat (9B)[4], Mistral-Instruct (7B)[5]. We have also introduced Nash CoT with LLama3-Instruct [6]. However, there are concerns regarding uncontrollable factors mentioned above. 
 
@@ -100,7 +100,7 @@ Addtionally, thanks my collaberator: Cunxiang Wang
 
 This reseach is sponsed by MiLab at WestLake Univeristy.
 
-### If you utilize our codebase, please cite below:
+-If you utilize our codebase, please cite below:-
 ```c
 @article{,
     title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
