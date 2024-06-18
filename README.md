@@ -27,12 +27,15 @@ Nash CoT uses question-related contextual information as a template for making i
 ![image](demonstration.png)
 
 ## Configuration and experiment
+Dependent:
+lib     | version | 
+--------  | ----- |
+python | 3.8 |
+system (platform) | ubuntu/Linux |
+PyTorch | 2.0.0 |
+ Huggingface Transformer | 4.38.2 |
 ### Configuration
 ```c
-# python version          : 3.8
-# system                  : Linux
-# PyTorch                 : 2.0.0
-# Huggingface Transformer : 4.38.2
 conda create --name nash_cot python=3.8
 conda activate nash_cot
 unzip nash-chain-of-thought.zip
