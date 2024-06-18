@@ -34,7 +34,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
 tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.2",cach_dir='your path')
 # However, some LLMs require specific command, such that GLM4 has to set trust_remote_code=True,
-```c
+```
 
 ### Configuration
 ```c
