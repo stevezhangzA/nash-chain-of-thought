@@ -78,8 +78,8 @@ role      | player template
 mathematician | You are a mathematician, you excel at analyzing problems from a mathematical logical perspective and arrive at conclusions that align with your values.
 litterateur | You are a literary scholar who has read a vast array of literary works. Please consider the problem from the perspective of a literary scholar.
 Philosopher | You are a philosopher, your knowledge base includes a wealth of philosophical knowledge. You enjoy approaching problems from a philosophical perspective and arriving at conclusions that align with your values.
-geographer | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
-statesman | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
+geographer  | You are a geographer with a deep understanding of geographical knowledge. Please approach the given problem from the perspective of a geographer.
+statesman   | You are a politician, and your decision-making process stems from your role as a politician. Please make decisions based on this perspective regarding the given problem.
 
 ### Meanwhile, we provide some our runned loggings
 
@@ -108,7 +108,6 @@ This reseach is sponsored by MiLab at WestLake Univeristy.
     archivePrefix={arXiv}
 }
 ```
-
 # Collaberation 
 
 If you can find out any kinds of new usages of Nash CoT, we are welcomed to be contacted and supplyment new emergent experimental results! For instance, 1) You conduct evaluation on LLama, GPT, etc. 2) You find out this approach can be scaled to other setting such as controllable generation  
