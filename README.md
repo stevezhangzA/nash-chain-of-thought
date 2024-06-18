@@ -28,7 +28,7 @@ Nash CoT uses question-related contextual information as a template for making i
 
 ## Configuration and experiment
 Dependent:
-lib     | version | 
+     | version | 
 --------  | ----- |
 python | 3.8 |
 system (platform) | ubuntu/Linux |
