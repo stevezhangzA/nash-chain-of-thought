@@ -85,8 +85,8 @@ statesman   | You are a politician, and your decision-making process stems from 
 
 Model     | Method | AQuA | GSM8K| Coin Flip |Object Tracking | Bigbench Date|CommonsensQA|
 --------  | ----- | ----- | ----- |----- |----- |-----|-----|
-Mistralai-Instruct (7B) | self-consistency |34.4 \pm 6.1 | 58.5 \pm 2.8|  21.9\pm 4.7|38.8\pm 0.8|47.0\pm 1.5 | 71.0 \pm 3.4|
-Mistralai-Instruct (7B) | Nash CoT |39.9\pm 5.4| 55.7 \pm 5.8 |29.0\pm 5.4 | 44.8\pm 2.0 | 41.1 \pm 1.2| 69.4 \pm 4.7|
+Mistralai-Instruct (7B) | self-consistency |34.4 $\pm$ 6.1 | 58.5 $\pm$2.8|  21.9$\pm$4.7|38.8\pm 0.8|47.0$\pm$ 1.5 | 71.0$\pm$ 3.4|
+Mistralai-Instruct (7B) | Nash CoT |39.9$\pm$ 5.4| 55.7 $\pm$ 5.8 |29.0$\pm$ 5.4 | 44.8$\pm$2.0 | 41.1 $\pm$1.2| 69.4$\pm$ 4.7|
 
 ## Thanks 
 
