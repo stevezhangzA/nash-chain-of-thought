@@ -120,7 +120,7 @@ This reseach is sponsed by MiLab at WestLake Univeristy.
 
 If you discover any new uses for Nash CoT, please feel free to contact us and provide new experimental results. For example: 1) You conduct an evaluation on LLama, GPT, etc. 2) You find that this approach can be scaled to another setting, such as controllable generation.
 
-Both my email (stevezhangz98a@gmail.com) and adding a new blog to this project are welcome.
+Both my email (stevezhangz@163.com) and adding a new blog to this project are welcome.
 
 ## *Reference*
 
