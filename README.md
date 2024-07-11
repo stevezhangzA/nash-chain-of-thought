@@ -108,19 +108,16 @@ This reseach is sponsed by MiLab at WestLake Univeristy.
 
 *If you utilize our codebase, please cite below:*
 ```c
-@article{,
-    title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
-    author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
-    year={2024},
-    eprint={},
-    archivePrefix={arXiv}
+@misc{zhang2024nashcotmultipathinference,
+      title={Nash CoT: Multi-Path Inference with Preference Equilibrium}, 
+      author={Ziqi Zhang and Cunxiang Wang and Xiong Xiao and Yue Zhang and Donglin Wang},
+      year={2024},
+      eprint={2407.07099},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2407.07099}, 
 }
 ```
-# Collaberation 
-
-If you discover any new uses for Nash CoT, please feel free to contact us and provide new experimental results. For example: 1) You conduct an evaluation on LLama, GPT, etc. 2) You find that this approach can be scaled to another setting, such as controllable generation.
-
-Both my email (stevezhangz@163.com) and adding a new blog to this project are welcome.
 
 ## *Reference*
 
